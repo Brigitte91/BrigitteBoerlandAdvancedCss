@@ -1,0 +1,33 @@
+.blok{
+
+    &__image{
+        width: 300px;
+        object-fit: cover;
+        border: 5px $backgroundtext solid;
+        opacity: 1;
+        grid-row: 1 / 6;
+        grid-column: 1 / 2;
+        z-index: 1;
+        transition: 500ms ease;
+        border-radius: $borderradius;
+    }
+
+    &__button{
+        grid-area: 3/1/4/2;
+        justify-self: center;
+        opacity: 0;
+        transition: 500ms ease;
+    }
+
+    &__text{
+        display: flex;
+        background-color: $backgroundbutton;
+        color: $backgroundtext;
+        font-size: 16px;
+        font-family: $fontbasic;
+        padding: $padding;
+        width: 100px;
+        justify-content: center;
+        border-radius: 5px;
+    }
+}

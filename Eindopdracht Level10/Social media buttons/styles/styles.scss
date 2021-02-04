@@ -1,0 +1,127 @@
+@import "./variables";
+@mixin icon-brand{
+    font-family: "Font Awesome 5 Brands";  
+    font-weight: 900;
+    margin-right: 25px;
+    color:white;
+    font-size: 16px;
+}
+@mixin icon-free{
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    margin-right: 15px;
+    color:white;
+    font-size: 16px;
+}
+
+@mixin transition{
+    transition-property: left;
+    transition-delay: 200ms;
+    transition-duration: 800ms;
+    transition-timing-function: ease-in-out;
+}
+
+body{
+    font-family: $fontbasic;
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+
+    .container{
+        margin-top: 350px;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-end;
+        &>*{
+            padding: 0;
+            margin: 0;
+            width: 300px;
+            overflow: hidden;
+            li{
+                list-style-type: none;
+                padding: 10px;
+                position:relative;
+                left: 260px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                a{
+                    color: white;
+                    text-decoration: none;
+                    font-family: $fontbasic;
+                    :visited{
+                        color: white;
+                        text-decoration: none;
+                        font-family: $fontbasic;
+                    }
+                }
+            }
+                .menu{
+                    .icon::before{
+                        display: inline-block;
+                        font-style: normal;
+                        font-variant: normal;
+                        text-rendering: auto;
+                        -webkit-font-smoothing: antialiased;
+                        font-size: 16px;
+                    }
+                    &__blog{
+                        background-color: $colorblog;
+                        @include transition;
+                        &::before{
+                            content: "\f5fc";
+                            @include icon-free;
+                        }
+                        &:hover{
+                            left: 0px;
+                        }
+                    }
+                    &__twitter{
+                        background-color: $colortwitter;
+                        @include transition;
+                        &::before{
+                            content: "\f099";
+                            @include icon-brand;
+                        }
+                        &:hover{
+                            left: 0px;
+                        }
+                    }
+                    &__linkedin{
+                        background-color: $colorlinkedin;
+                        @include transition;
+                        &::before{
+                            @include icon-brand; 
+                            content: "\f0e1";
+                        }
+                        &:hover{
+                            left: 0px;
+                        }
+                    }
+                    &__facebook{
+                        background-color: $colorfacebook;
+                        @include transition;
+                        &::before{
+                            @include icon-brand;
+                            content: "\f39e";
+                        }
+                        &:hover{
+                            left: 0px;
+                        }
+                    }
+                    &__github{
+                        background-color: $colorgithub;
+                        @include transition;
+                        &::before{
+                            @include icon-brand;
+                            content: "\f09b";
+                        }
+                        &:hover{
+                            left: 0px;
+                        }
+                }
+            }
+        }
+    }
+}
+    
